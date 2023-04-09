@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  web:
+    image: lavoweb/php-7.4
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+      - ./vhosts/:/etc/apache2/sites-enabled/

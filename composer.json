@@ -1,0 +1,12 @@
+{
+    "name": "dupot/photoboothphp",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "My\\": "src/"
+        }
+    },
+    "require": {
+        "dupot/static-management-framework": "^1.0"
+    }
+}

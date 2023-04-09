@@ -1,0 +1,22 @@
+[
+    {
+        "pattern": "#/takePicture.html#",
+        "class": "My\\Infrastructure\\Pages\\TakePicturePage",
+        "method": "take"
+    },
+    {
+        "pattern": "#/previewPicture.html#",
+        "class": "My\\Infrastructure\\Pages\\PreviewPicturePage",
+        "method": "preview"
+    },
+    {
+        "pattern": "#/apiConvert.html#",
+        "class": "My\\Infrastructure\\Apis\\ConvertApi",
+        "method": "convert"
+    },
+    {
+        "pattern": "#/#",
+        "class": "My\\Infrastructure\\Pages\\HomePage",
+        "method": "index"
+    }
+]
