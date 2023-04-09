@@ -2,7 +2,7 @@
 
 
     <p>
-        <a href="/takePicture.html" class="btn btn-success btn-lg" role="button">
+        <a autofocus tabindex="1" href="/takePicture.html" class="btn btn-success btn-lg" role="button">
 
 
 
@@ -18,7 +18,7 @@
 
     <p>
 
-        <a href="/takePicture.html?without=1" class="btn btn-primary btn-lg" role="button">
+        <a tabindex="2" href="/takePicture.html?without=1" class="btn btn-primary btn-lg" role="button">
 
 
 

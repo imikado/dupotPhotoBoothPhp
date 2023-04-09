@@ -7,6 +7,11 @@
         z-index: 200;
 
     }
+
+    #capture span {
+        color: white;
+        font-size: 200px;
+    }
 </style>
 
 
@@ -24,7 +29,7 @@
 </div>
 <!-- Trigger canvas web API -->
 <div id="capture">
-    <button class="btn btn-primary btn-lg" onclick="return takePicture()">Prendre la photo ^_^</button>
+    <button autofocus tabindex="1" class="btn btn-primary btn-lg" onclick="return delayTakePicture()">Prendre la photo ^_^</button>
 </div>
 
 <!-- Webcam video snapshot -->
@@ -66,6 +71,25 @@
 
     // Draw image
     var context = canvas.getContext('2d');
+
+    var countdown = 0;
+    var maxCountdown = 5;
+
+    function delayTakePicture() {
+        countdown += 1;
+
+        let captureDiv = document.getElementById('capture');
+        if (captureDiv) {
+            console.log('inner');
+            captureDiv.innerHTML = '<span>' + (maxCountdown - countdown) + '</span>';
+        }
+        console.log(countdown);
+
+        if (countdown >= maxCountdown) {
+            return takePicture();
+        }
+        setTimeout(delayTakePicture, 1000);
+    }
 
 
     function takePicture() {

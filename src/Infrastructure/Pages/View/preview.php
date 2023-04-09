@@ -19,5 +19,5 @@
 
 
 <div id="capture">
-    <a class="btn btn-primary btn-lg" href="/">Merci ^_^, Retour au Menu</button>
+    <a autofocus tabindex="1" class="btn btn-primary btn-lg" href="/">Merci ^_^, Retour au Menu</button>
 </div>
