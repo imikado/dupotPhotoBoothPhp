@@ -16,13 +16,15 @@
 <!-- 910x1366  -->
 
 <!-- Stream video via webcam -->
-<div class="video-wrap">
-    <video id="video" playsinline autoplay></video>
-</div>
+<div class="border d-flex align-items-center justify-content-center" style="height: 700px;">
 
+    <div class="video-wrap">
+        <video id="video" playsinline autoplay></video>
+    </div>
+</div>
 <!-- Trigger canvas web API -->
 <div id="capture">
-    <button class="btn btn-primary btn-lg" onclick="return takePicture()">Capture</button>
+    <button class="btn btn-primary btn-lg" onclick="return takePicture()">Prendre la photo ^_^</button>
 </div>
 
 <!-- Webcam video snapshot -->
@@ -38,8 +40,8 @@
     const constraints = {
         audio: false,
         video: {
-            width: 1366,
-            height: 910
+            width: 1200,
+            height: 800
         }
     };
 
@@ -70,8 +72,8 @@
 
         let canvas = document.createElement('canvas');
 
-        canvas.width = 1366;
-        canvas.height = 910;
+        canvas.width = 1200;
+        canvas.height = 800;
 
         let ctx = canvas.getContext('2d');
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
