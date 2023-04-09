@@ -85,9 +85,11 @@
     }
 
     async function convertPicture(image) {
+        let transparent = <?php if (isset($_GET['without'])) : ?>0<?php else : ?>1<?php endif; ?>;
+
         const formData = new FormData();
         formData.append("image", image);
-
+        formData.append("convert", transparent);
 
         const response = await fetch("apiConvert.html", {
             method: "POST",

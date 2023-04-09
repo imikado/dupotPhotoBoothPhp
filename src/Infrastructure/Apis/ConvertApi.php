@@ -26,6 +26,7 @@ class ConvertApi extends PageAbstract
         }
 
         $rawImage = $_POST['image'];
+        $convert = $_POST['convert'];
 
         $rawImageList = explode(',', $rawImage);
 
@@ -39,9 +40,13 @@ class ConvertApi extends PageAbstract
 
         $this->log('try remove background  ' . $originFilename);
 
-        $imagePath = $this->removeBackgroundForImage($originFilename);
+        $originImagePath = $this->copyImageToGallery($originFilename);
 
-
+        if ($convert == 1) {
+            $imagePath = $this->removeBackgroundForImage($originFilename);
+        } else {
+            $imagePath = $originImagePath;
+        }
 
 
         $response = (object)[
@@ -79,5 +84,15 @@ class ConvertApi extends PageAbstract
 
 
         return self::DEST_PATH . '/' . basename($tmpFilenameWithoutBackground);
+    }
+
+    protected function copyImageToGallery($tmpOriginImagePath)
+    {
+        $command = 'cp ' . $tmpOriginImagePath . ' ' . __DIR__ . '/../../../public/' . self::DEST_PATH;
+        $this->log($command);
+
+        exec($command);
+
+        return self::DEST_PATH . '/' . basename($tmpOriginImagePath);
     }
 }
