@@ -21,3 +21,24 @@
 <div id="capture">
     <a autofocus tabindex="1" class="btn btn-primary btn-lg" href="/">Merci ^_^, Retour au Menu</button>
 </div>
+
+
+<script>
+    document.addEventListener(
+        "buttonA",
+        (e) => {
+            document.location.href = '/';
+        },
+        false
+    );
+
+    document.addEventListener(
+        "buttonB",
+        (e) => {
+            document.location.href = '/';
+        },
+        false
+    )
+</script>
+
+<div style="font-size:80px;color:white;position:absolute;bottom:0px;left:0px">A/B: Retour menu</div>

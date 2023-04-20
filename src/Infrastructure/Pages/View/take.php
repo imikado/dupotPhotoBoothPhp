@@ -29,7 +29,7 @@
 </div>
 <!-- Trigger canvas web API -->
 <div id="capture">
-    <button autofocus tabindex="1" class="btn btn-primary btn-lg" onclick="return delayTakePicture()">Prendre la photo ^_^</button>
+    <a autofocus tabindex="1" class="btn btn-primary btn-lg" onclick="toggleFullScreen();delayTakePicture()">Bouton (B) : prendre la photo ^_^</a>
 </div>
 
 <!-- Webcam video snapshot -->
@@ -133,4 +133,22 @@
     function redirectTo(imagePath) {
         document.location.href = 'previewPicture.html?imagePath=' + imagePath;
     }
+
+    document.addEventListener(
+        "buttonA",
+        (e) => {
+            document.location.href = '/';
+        },
+        false
+    );
+
+    document.addEventListener(
+        "buttonB",
+        (e) => {
+            delayTakePicture();
+        },
+        false
+    )
 </script>
+
+<div style="font-size:80px;color:white;position:absolute;bottom:0px;left:0px">A: Retour, B: prendre photo</div>
